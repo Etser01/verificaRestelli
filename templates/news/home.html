@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{%block titolo%}
+	{{block.super}} | home di news
+{%endblock titolo%}
+{%block contenuti%}
+{% if cmd_list %}
+<ol>
+{% for comandi in cmd_list %}
+<li><a href="{{ comandi }}">{{ comandi }}</a></li>
+{% endfor %}
+</ol>
+{% else %}
+<p>No cmd are available.</p>
+{% endif %}
+{%endblock contenuti%}
